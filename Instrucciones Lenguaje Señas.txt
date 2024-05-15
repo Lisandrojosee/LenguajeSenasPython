@@ -1,0 +1,2 @@
+Instrucciones Lenguaje Señas
+Librerias: mediapipe, cv2, tensorflow, math, inmutils, time
