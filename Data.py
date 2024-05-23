@@ -7,7 +7,7 @@ import SeguimientoManos as sm
 
 # Creación de la Carpeta
 nombre = 'Letra_A'
-direccion = 'C:/Users/lisan/OneDrive/Desktop/lenguajeSenas/Data'
+direccion = 'C:/Users/lisan/Desktop/lenguajeSenas/Data'
 carpeta = direccion + '/' + nombre
 
 # Si no está creada la carpeta
@@ -21,6 +21,9 @@ cap = cv2.VideoCapture(0)
 # Cambiamos la Resolución
 cap.set(3, 1280)
 cap.set(4, 720)
+
+#Declaramos Contador
+count = 0
 
 # Declarar Detector
 detector = sm.detectormanos(Confdeteccion=0.9)
@@ -40,14 +43,33 @@ while True:
         #extraer informacion
         xmin, ymin, xmax, ymax = bbox
 
-        cv2.rectangle(frame,(xmin,ymin),(xmax,ymax),(255,0,0),2)
+        #Asignamos Margen
+        xmin = xmin - 40
+        ymin = ymin - 40
+        xmax = xmax + 40
+        ymax = ymax + 40
+
+        #Relizar el recorte de nuestra mano
+        recorte = frame[ymin:ymax, xmin:xmax]
+
+        #Redimencionamiento
+       #recorte = cv2.resize(recorte, (640, 640), interpolation = cv2.INTER_CUBIC)
+
+        #Almacenar Nuestras Imagenes
+        cv2.imwrite(carpeta + "/A_{}.jpg" .format(count), recorte)
+
+        #Aumentamos Contador
+        count = count + 1
+
+        cv2.imshow("RECORTE", recorte)
+
 
 
 
     cv2.imshow("LENGUAJE DE SEÑAS", frame)
     # Leer teclado
     t = cv2.waitKey(1)
-    if t == 27:  # Presiona la tecla 'Esc' para salir
+    if t == 27 or count == 100:  # Presiona la tecla 'Esc' para salir
         break
 
 # Liberar recursos
