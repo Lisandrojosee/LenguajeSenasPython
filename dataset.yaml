@@ -1,0 +1,4 @@
+train: C:\Users\lisan\Desktop\lenguajeSenas\dataset\train/
+val: C:\Users\lisan\Desktop\lenguajeSenas\dataset\val/
+nc: 1
+names: ["Letra_A"]
