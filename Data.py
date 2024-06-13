@@ -6,7 +6,7 @@ import SeguimientoManos as sm
 
 
 # Creación de la Carpeta
-nombre = 'Letra_A'
+nombre = 'MAL'
 direccion = 'C:/Users/lisan/Desktop/lenguajeSenas/Data'
 carpeta = direccion + '/' + nombre
 
@@ -56,7 +56,7 @@ while True:
        #recorte = cv2.resize(recorte, (640, 640), interpolation = cv2.INTER_CUBIC)
 
         #Almacenar Nuestras Imagenes
-        cv2.imwrite(carpeta + "/A_{}.jpg" .format(count), recorte)
+        cv2.imwrite(carpeta + "/MAL_{}.jpg" .format(count), recorte)
 
         #Aumentamos Contador
         count = count + 1
@@ -69,7 +69,7 @@ while True:
     cv2.imshow("LENGUAJE DE SEÑAS", frame)
     # Leer teclado
     t = cv2.waitKey(1)
-    if t == 27 or count == 100:  # Presiona la tecla 'Esc' para salir
+    if t == 300 or count == 80:  # Presiona la tecla 'Esc' para salir
         break
 
 # Liberar recursos
