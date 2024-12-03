@@ -1,4 +1,5 @@
-train: C:\Users\lisan\Desktop\lenguajeSenas\dataset\train/
-val: C:\Users\lisan\Desktop\lenguajeSenas\dataset\val/
-nc: 1
-names: ["Letra_A"]
+train: C:\Users\lisan\Desktop\lenguajeSenas\dataset\train
+val: C:\Users\lisan\Desktop\lenguajeSenas\dataset\val
+test:
+nc: 28
+names: ["A", "B", "BIEN", "C", "D", "E", "F", "G", "H", "HOLA", "I", "J", "K", "L", "M", "MAL", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y"]
